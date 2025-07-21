@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <title>Dirty Myrtle Wing Company - Best Wings in Myrtle Beach</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style type="text/tailwindcss">
+        .menu-item-image {
+            @apply w-28 h-28 object-cover rounded-lg flex-shrink-0;
+        }
+    </style>
+
+    <link href="./style.css" rel="stylesheet"/> 
+
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-dark)]">
+<div class="relative flex size-full min-h-screen flex-col justify-between group/design-root overflow-x-hidden">
+
+    <header class="sticky top-0 z-10 bg-[var(--background-color)]/80 backdrop-blur-sm">
+        <div id="dynamic-header-content">
+            </div>
+    </header>
+
+    <main id="main-content" class="px-4 pt-6 pb-24 flex-grow">
+        </main>
+
+    <footer class="fixed bottom-0 left-0 right-0 bg-red-600 border-t-2 border-yellow-400 shadow-lg text-white">
+        <div class="flex items-start justify-around px-2 pt-2 pb-safe-bottom">
+            <a class="flex flex-col items-center justify-center gap-1 text-white w-1/5 hover:bg-red-700 transition-colors py-2 rounded-lg group" href="#" data-page-link="home">
+                <div class="flex h-7 items-center justify-center group-[.active]:text-yellow-300">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </div>
+                <span class="text-[10px] font-medium group-[.active]:font-bold group-[.active]:text-yellow-300">Home</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-white w-1/5 hover:bg-red-700 transition-colors py-2 rounded-lg group" href="#" data-page-link="menu">
+                <div class="flex h-7 items-center justify-center group-[.active]:text-yellow-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
+                    </svg>
+                </div>
+                <span class="text-[10px] font-medium group-[.active]:font-bold group-[.active]:text-yellow-300">Our Wings</span>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-white w-1/5 hover:bg-red-700 transition-colors py-2 rounded-lg group" href="#" data-page-link="order">
+                <div class="flex h-7 items-center justify-center relative group-[.active]:text-yellow-300">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M236,85.46A16,16,0,0,0,224,80H187.63L134,18.73a8,8,0,0,0-12,0L68.37,80H32A16,16,0,0,0,16.14,98.11L30,202.12A16,16,0,0,0,45.87,216H210.13A16,16,0,0,0,226,202.12l13.87-104A16,16,0,0,0,236,85.46ZM128,36.15,166.37,80H89.63ZM210.13,200H45.87L32.12,96h191.76Z"></path>
+                    </svg>
+                    <span id="cart-item-count" class="absolute -top-1 -right-2 text-xs font-bold bg-yellow-500 text-red-700 rounded-full size-5 flex items-center justify-center border border-white">0</span>
+                </div>
+                <p class="text-xs font-medium leading-normal tracking-wide group-[.active]:font-bold group-[.active]:text-yellow-300">My Order</p>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-white w-1/5 hover:bg-red-700 transition-colors py-2 rounded-lg group" href="#" data-page-link="about">
+                <div class="flex h-7 items-center justify-center group-[.active]:text-yellow-300">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                    </svg>
+                </div>
+                <p class="text-xs font-medium leading-normal tracking-wide group-[.active]:font-bold group-[.active]:text-yellow-300">Our Story</p>
+            </a>
+            <a class="flex flex-col items-center justify-center gap-1 text-white w-1/5 hover:bg-red-700 transition-colors py-2 rounded-lg group" href="#" data-page-link="contact">
+                <div class="flex h-7 items-center justify-center group-[.active]:text-yellow-300">
+                    <svg fill="currentColor" height="24px" viewBox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </div>
+                <p class="text-xs font-medium leading-normal tracking-wide group-[.active]:font-bold group-[.active]:text-yellow-300">Find Us</p>
+            </a>
+        </div>
+        <div class="h-safe-bottom bg-[var(--background-color)]"></div>
+    </footer>
+
+</div>
+
+<!-- Swiper.js CDN - Load before our scripts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Modular JavaScript Files -->
+<script src="./js/menuData.js"></script>
+<script src="./js/pageContent.js"></script>
+<script src="./js/cart.js"></script>
+<script src="./js/pageManager.js"></script>
+<script src="./js/navigation.js"></script>
+<script src="./js/app.js"></script>
+
+</body>
+</html>
