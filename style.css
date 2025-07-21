@@ -161,14 +161,29 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    margin: 0;
-    padding: 8px 0 0; /* Reduced top padding, removed bottom padding */
-    background-color: rgba(0, 0, 0, 0.85) !important; /* Made background color more consistent */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--primary-color);
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: env(safe-area-inset-bottom); /* Account for iPhone home indicator */
+    height: auto;
+}
+
+/* Safe area padding for devices with notches */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    footer {
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+    }
+}
+
+/* Ensure content doesn't go behind the footer on small screens */
+@media (max-height: 700px) {
+    main {
+        padding-bottom: 7rem; /* Slightly more padding on smaller screens */
+    }
 }
 
 /* Dock link styles */
@@ -213,11 +228,12 @@ footer svg {
     }
 }
 
-/* Ensure main content doesn't get hidden behind the dock */
+/* Ensure main content has proper spacing above the fixed footer */
 main {
     flex: 1;
-    padding-bottom: 5.5rem; /* Height of the dock */
+    padding-bottom: 6rem; /* Slightly more than footer height to ensure spacing */
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     /* Add safe area padding for mobile devices */
     padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
 }

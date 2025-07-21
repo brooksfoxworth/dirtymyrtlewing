@@ -12,7 +12,7 @@ class PageManager {
     /**
      * Load and render a specific page
      */
-    loadPage(page) {
+    async loadPage(page) {
         // Clear previous content
         this.mainContent.innerHTML = '';
         this.dynamicHeaderContent.innerHTML = '';
@@ -32,6 +32,13 @@ class PageManager {
         // Initialize Swiper after content is loaded
         setTimeout(() => {
             this.initializeSwipers();
+            
+            // Force scroll to top after all content is rendered
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Additional scroll reset for mobile browsers
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }, 100);
     }
 
