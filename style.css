@@ -155,35 +155,45 @@ body {
     }
 }
 
-/* Dock/Footer Styles */
+/* Fixed Dock/Footer Styles */
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    height: 5rem; /* Fixed height */
     background: var(--primary-color);
     z-index: 1000;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    padding-bottom: env(safe-area-inset-bottom); /* Account for iPhone home indicator */
-    height: auto;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 0;
+    box-sizing: border-box;
 }
 
-/* Safe area padding for devices with notches */
+/* Safe area handling for notched devices */
 @supports (padding-bottom: env(safe-area-inset-bottom)) {
     body {
-        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: 0; /* Remove any body padding */
     }
     
     footer {
-        padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+        padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+        height: calc(5rem + env(safe-area-inset-bottom));
     }
 }
 
-/* Ensure content doesn't go behind the footer on small screens */
-@media (max-height: 700px) {
-    main {
-        padding-bottom: 7rem; /* Slightly more padding on smaller screens */
-    }
+/* Container for dock items */
+footer > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure content doesn't go behind the dock */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
 }
 
 /* Dock link styles */
@@ -228,14 +238,12 @@ footer svg {
     }
 }
 
-/* Ensure main content has proper spacing above the fixed footer */
+/* Main content with consistent spacing for fixed footer */
 main {
     flex: 1;
-    padding-bottom: 6rem; /* Slightly more than footer height to ensure spacing */
+    padding-bottom: 5rem; /* Space for the fixed footer */
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    /* Add safe area padding for mobile devices */
-    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Enhanced card hover effects */
